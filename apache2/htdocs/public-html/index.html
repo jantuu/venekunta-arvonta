@@ -4,9 +4,60 @@
 
 <h1>KALAKISA venekuntien arpomisen avustin</h1>
 
-<p>kalakisoihin osallistuvat:</p>
+Osallistuja: <input type="text" id="henkilo" value="enter name">
 
-document.getElementById('demo').innerHTML = Date()
+<button onclick="addPerson()">Lis‰‰</button>
+
+<!--<p>kalakisoihin osallistuvat:</p>-->
+<p id="kisaosallistujat"></p>
+
+
+<script>
+var Osallistujat = [];
+
+function addPerson() {
+    Osallistujat.push(document.getElementById("henkilo").value);
+    document.getElementById("henkilo").value = "";
+    document.getElementById("kisaosallistujat").innerHTML = Osallistujat;
+}
+</script>
+
+
+Kalakippo: <input type="text" id="vene" value="enter name">
+<button onclick="addBoat()">Lis‰‰</button>
+
+<!--<p>kalakisoissa olevat veneet:</p>-->
+<p id="kisaveneet"></p>
+<script>
+var Veneet = [];
+function addBoat() {
+    Veneet.push(document.getElementById("vene").value);
+    document.getElementById("vene").value = "";
+    document.getElementById("kisaveneet").innerHTML = Veneet;
+}
+</script>
+
+
+<button onclick="lottery()">Arvo venekunnat</button>
+<p id="arvonta"></p>
+
+<script>
+var Veneet = [];
+function lottery() {
+
+var venekpl = Veneet.length;
+var osallistujakpl = Osallistujat.length;
+}
+
+document.getElementById("arvonta").innerHTML = osallistujakpl;
+document.getElementById("arvonta").innerHTML = venekpl;
+
+</script>
+
+<p>t‰n‰‰n on:
+<script>
+document.write(Date());
+</script>
+</p>
 </body>
 </html>
-
